@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* F1 Unified Dashboard Design System */
+
+@layer base {
+  :root {
+    /* Deep Racing Black Backgrounds */
+    --background: 0 0% 4%;
+    --background-elevated: 0 0% 6%;
+    --foreground: 0 0% 98%;
+
+    /* Ferrari Racing Red */
+    --primary: 0 100% 43%;
+    --primary-glow: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Metallic Silver/Chrome */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --silver: 0 0% 75%;
+    --chrome: 0 0% 85%;
+
+    /* Card & Surface */
+    --card: 0 0% 8%;
+    --card-elevated: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover */
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Muted States */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Accent - Racing Yellow/Gold */
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 43%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 100% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 100% 43%;
+
+    /* Racing Gradients */
+    --gradient-racing: linear-gradient(135deg, hsl(0 100% 43%) 0%, hsl(0 100% 30%) 100%);
+    --gradient-metallic: linear-gradient(135deg, hsl(0 0% 30%) 0%, hsl(0 0% 15%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 100%);
+
+    /* Glow Effects */
+    --glow-red: 0 0 20px hsl(0 100% 43% / 0.5);
+    --glow-silver: 0 0 15px hsl(0 0% 85% / 0.3);
+
+    /* Shadows */
+    --shadow-racing: 0 10px 40px -10px hsl(0 100% 43% / 0.4);
+    --shadow-elevated: 0 20px 50px -12px hsl(0 0% 0% / 0.8);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .racing-glow {
+    box-shadow: var(--glow-red);
+  }
+
+  .racing-glow-sm {
+    box-shadow: 0 0 10px hsl(0 100% 43% / 0.3);
+  }
+
+  .silver-glow {
+    box-shadow: var(--glow-silver);
+  }
+
+  .text-gradient-racing {
+    background: var(--gradient-racing);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-racing {
+    background: var(--gradient-racing);
+  }
+
+  .bg-gradient-metallic {
+    background: var(--gradient-metallic);
+  }
+
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(0 100% 43% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px hsl(0 100% 43% / 0.6);
+  }
+}
