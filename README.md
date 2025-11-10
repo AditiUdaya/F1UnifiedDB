@@ -84,7 +84,7 @@ Each page in the application demonstrates a different SQL feature or concept, in
 
 - **Backend:** Node.js (Express.js)  
 - **Database:** MySQL  
-- **Frontend Dashboard:** HTML, CSS, JavaScript  
+- **Frontend Dashboard:** React 
 - **Libraries:** mysql2, cors, express  
 - **Visualization:** Chart.js, 3D Graph for SQL View  
 
